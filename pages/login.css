@@ -1,0 +1,135 @@
+body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .inner-container{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-header {
+            margin-top: 70px;
+        }
+
+        .login-header img {
+            width:150px;  
+            display: block; 
+            margin: 0 auto; 
+        }
+    
+
+        .login-main {
+            margin-top: 40px;
+            width: 400px;
+        }
+
+        .login-container {
+            width: 100%;
+            background-color: #ffffff;
+            border: 1px solid #e3e3e3;
+            border-radius: 4px;
+            padding: 40px 30px;
+            box-sizing: border-box;
+        }
+        .login-container form div {
+            margin-bottom: 20px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 12px 10px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .login-container input:focus{
+            border:#84a3d1 1px solid;
+            border-radius: 10px;
+        }
+
+        .save_id {
+            width:100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin:5px 0 15px 0;
+            font-size: 13px;
+        }
+
+        .save_id input{
+            width:15px;
+            cursor: pointer;
+        }
+
+            .save_id label{
+            cursor: pointer;
+        }
+
+        .login-btn{
+            width:100%;
+            background-color: #b3e3f1;
+            color:#0e356e;
+            border: none;
+            padding: 10px 0;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 15px;
+        }
+
+        .login-btn:hover{
+            background-color: #4078b8;
+            color:#fff;
+            cursor: pointer;
+        }
+
+        .user-info{
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            font-size: 14px;
+            gap: 100px;
+        }
+
+        .user-info ul {
+            display: flex;
+            list-style-type: none;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #676768;
+        }
+
+        .footer-list ul{
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        a{
+            text-decoration: none;
+            color : #676768;
+            font-weight: 500;
+        }
+
+        a:hover{
+            color:#3774cf;
+        }
+
+        .footer-cop {
+            margin-top: 5px;
+            color: #9a9a9a;
+        }

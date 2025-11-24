@@ -1,0 +1,97 @@
+.header {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(175, 175, 175, 0.267);
+    padding:20px 70px;
+    box-sizing: border-box;
+}
+
+.logo img {
+    width:100px;
+    display: block;
+    height: auto;
+}
+
+.navi ul{
+    display:flex;
+    gap: 100px;
+    margin:0;
+    padding:0;
+    height: auto;
+}
+
+.navi ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.navi ul li a:hover{
+    color:#4597e4;
+}
+
+
+.navi ul li {
+    position:relative;  
+}
+
+
+.navi .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    padding: 10px 0 ;
+    margin: 4px 0 0 0;
+    list-style: none;
+    border: 1px solid rgba(0,0,0,0.06);
+    display: none;
+    z-index: 100;
+     background-color: #fff;
+}
+
+.navi .sub-menu li a {
+    display: block;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.navi .sub-menu li a:hover {
+    background-color: #f5f7fa;
+    color: #4597e4;
+}
+
+.navi li.main-menu:hover > .sub-menu {
+    display: block;
+}
+
+.util {
+    display:flex;
+    gap: 20px;
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+
+
+.util li a{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    color:gray;
+    cursor:pointer;
+    transition: color 0.2s ease;
+}
+
+.util li a:hover{
+    color:#4597e4;
+    font-weight: 500;
+}

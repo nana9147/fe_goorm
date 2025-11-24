@@ -1,0 +1,32 @@
+.footer-container {
+    border-top: 1px solid rgba(175, 175, 175, 0.267);
+    width:100%;
+    padding: 10px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;    
+}
+
+.footer-container ul{
+    width:100%;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: center;
+    gap:30px;
+    padding:0;
+    list-style: none;
+    color:gray;
+}
+
+.footer-container ul li a{
+    text-decoration: none;
+    font-size: 14px;
+    color:gray;
+    transition: color 0.2s ease;
+}
+
+.footer-container li a:hover{
+    color:#4597e4;
+    font-weight: 500;
+}
