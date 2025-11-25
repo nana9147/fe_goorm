@@ -1,124 +1,87 @@
-  <html>
-    <head>
-        <title>Minimal Desk - 모던 데스크테리어 & 홈오피스 쇼핑몰</title> 
-        <meta charset="UTF-8" />
-        <link href="../img/cloud.png" rel="icon" type="image/png" />
-        <link href="./index.css" rel="stylesheet" />
+<html>
+  <head>
+    <title>Minimal Desk - 모던 데스크테리어 & 홈오피스 쇼핑몰</title>
+    <link href="../img/cloud.png" rel="icon" type="image/png" />
+    <link href="./index.css" rel="stylesheet" />
+    <script type="module" src="./js/main.js"></script>
+  </head>
 
-        <!-- 중복페이지 방지 -->
-        <link rel="canonical" href="https://minimaldesk.shop/" />
+  <body>
+    <header class="header">
+      <!--logo영역-->
+      <h1 class="logo">
+        <a href="#">
+          <img src="../img/goorm_logo.png" alt="logo" />
+        </a>
+      </h1>
 
-        <!-- 기본 SEO -->
-        <meta name="author" content="Minimal Desk" />
-        <meta name="publisher" content="Minimal Desk" />
-        <meta name="description" content="Minimal Desk는 모던하고 심플한 데스크테리어, 홈오피스 제품을 전문적으로 판매하는 쇼핑몰입니다. 데스크 매트, 키보드·마우스, 모니터암, 조명, 수납 정리 등 다양한 데스크 구성 아이템을 한 곳에서 만나보세요." />
-        <meta name="keywords" content="데스크테리어, 데스크 셋업, 홈오피스, 미니멀 데스크, 모던 인테리어, 데스크 매트, 모니터암, 책상 꾸미기, 키보드 마우스, 감성 조명, 책상 정리" />
-        <meta name="robots" content="index, follow" />
+      <!--navi영역-->
+      <nav class="navi">
+        <ul style="list-style-type: none">
+          <li><a href="#">HOME</a></li>
+          <li class="main-menu">
+            <a href="#">전체상품</a>
+            <ul class="sub-menu">
+              <li><a href="#">전체상품</a></li>
+              <li><a href="#">신상품</a></li>
+              <li><a href="#">Best</a></li>
+              <li><a href="#">할인상품</a></li>
+            </ul>
+          </li>
+          <li class="main-menu">
+            <a href="#">카테고리</a>
+            <ul class="sub-menu">
+              <li><a href="#">테이블/책상</a></li>
+              <li><a href="#">의자/쇼파</a></li>
+              <li><a href="#">서랍/수납장</a></li>
+              <li><a href="#">진열장/책장</a></li>
+              <li><a href="#">가벽/파티션</a></li>
+              <li><a href="#">조명</a></li>
+            </ul>
+          </li>
+          <li class="main-menu">
+            <a href="#">브랜드스토리</a>
+            <ul class="sub-menu">
+              <li><a href="#">브랜드 소개</a></li>
+              <li><a href="#">제작 과정</a></li>
+            </ul>
+          </li>
+          <li class="main-menu">
+            <a href="#">고객센터</a>
+            <ul class="sub-menu">
+              <li><a href="#">공지사항</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">1:1 문의</a></li>
+              <li><a href="#">배송 안내</a></li>
+              <li><a href="#">반품 · 환불 안내</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
 
-        <!-- 모바일 최적화 -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!--util 영역-->
+      <ul class="util">
+        <li><a href="../pages/login.html">로그인/회원가입</a></li>
+        <li><a href="#">장바구니</a></li>
+      </ul>
+    </header>
 
-        <!-- Open Graph (SNS 공유용) -->
-        <meta property="og:title" content="Minimal Desk - 모던 데스크테리어 & 홈오피스 쇼핑몰" />
-        <meta property="og:description" content="모던하고 미니멀한 데스크테리어·홈오피스 아이템 전문 쇼핑몰. 당신의 책상을 더 감각적으로 만들어줄 공간 구성 제품을 만나보세요." />
-        <meta property="og:image" content="https://minimaldesk.shop/og-image.png" />
-        <meta property="og:url" content="https://minimaldesk.shop/" />
-        <meta property="og:type" content="website" />
-
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Minimal Desk - 데스크테리어 쇼핑몰" />
-        <meta name="twitter:description" content="모던 데스크 셋업을 위한 홈오피스 아이템 전문 쇼핑몰" />
-        <meta name="twitter:image" content="https://minimaldesk.shop/og-image.png" />
-
-        <!-- Schema.org (구글이 사이트 내용 이해하도록 도와주는 구조화 데이터) -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Store",
-            "name": "Minimal Desk",
-            "url": "https://minimaldesk.shop/",
-            "description": "모던 데스크테리어 및 홈오피스 아이템 전문 쇼핑몰",
-            "image": "https://minimaldesk.shop/og-image.png",
-            "sameAs": [
-                "https://instagram.com/minimaldesk",
-                "https://twitter.com/minimaldesk"
-            ]
-        }
-        </script>
-    </head>
-    <body>
-            <header class="header">
-                <!--logo영역-->
-                <h1 class="logo">
-                    <a href="#">
-                        <img src="../img/goorm_logo.png" alt="logo"/>
-                    </a>
-                </h1>
-
-                <!--navi영역-->
-                <nav class="navi">
-                    <ul style="list-style-type: none;">
-                        <li><a href="#">HOME</a></li>
-                        <li class="main-menu"><a href="#">전체상품</a>
-                            <ul class="sub-menu">
-                                <li><a href="#">전체상품</a></li>
-                                <li><a href="#">신상품</a></li>
-                                <li><a href="#">Best</a></li>
-                                <li><a href="#">할인상품</a></li>
-                            </ul>
-                        </li>
-                        <li class="main-menu"><a href="#">카테고리</a>
-                            <ul class="sub-menu">
-                                <li><a href="#">테이블/책상</a></li>
-                                <li><a href="#">의자/쇼파</a></li>
-                                <li><a href="#">서랍/수납장</a></li>
-                                <li><a href="#">진열장/책장</a></li>
-                                <li><a href="#">가벽/파티션</a></li>
-                                <li><a href="#">조명</a></li>
-                            </ul>
-                        </li>
-                        <li class="main-menu"><a href="#">브랜드스토리</a>
-                             <ul class="sub-menu">
-                                <li><a href="#">브랜드 소개</a></li>
-                                <li><a href="#">제작 과정</a></li>
-                            </ul>
-                        </li>
-                        <li class="main-menu"><a href="#">고객센터</a>
-                             <ul class="sub-menu">
-                                <li><a href="#">공지사항</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">1:1 문의</a></li>
-                                <li><a href="#">배송 안내</a></li>
-                                <li><a href="#">반품 · 환불 안내</a></li>
-                            </ul>
-                        </li>
-                    </ul>       
-                </nav> 
-
-                <!--util 영역-->
-                <ul class="util">
-                    <li><a href="../pages/login.html">로그인/회원가입</a></li>
-                    <li><a href="#">장바구니</a></li>
-                </ul>
-            </header>
-
-            <main class="main">
-                
-            </main>
-            <footer class="footer-container">
-                    <ul>
-                        <li><a href="#">이용약관</a></li>
-                        <li><a href="#">개인정보 처리방침</a></li>
-                        <li><a href="#">고객센터</a></li>
-                        <li>
-                            <address>
-                                <sapn itemprop="name"> © Goorm Corp.</sapn>
-                                <span hidden itemprop="address">주소 : 서울특별시 구로구 디지털로</span>
-                                <span hidden itemprop="telephone">대표번호 : 02-1234-5678</span>
-                            </address>
-                        </li>
-                    </ul>
-            </footer>
-    </body>
-  </html>
+    <main class="main"></main>
+    <footer class="footer-container">
+      <ul>
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">개인정보 처리방침</a></li>
+        <li><a href="#">고객센터</a></li>
+        <li>
+          <address>
+            <sapn itemprop="name"> © Goorm Corp.</sapn>
+            <span hidden itemprop="address"
+              >주소 : 서울특별시 구로구 디지털로</span
+            >
+            <span hidden itemprop="telephone">대표번호 : 02-1234-5678</span>
+          </address>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
