@@ -1,87 +1,48 @@
 <html>
   <head>
     <title>Minimal Desk - 모던 데스크테리어 & 홈오피스 쇼핑몰</title>
-    <link href="../img/cloud.png" rel="icon" type="image/png" />
+    <link href="./img/cloud.png" rel="icon" type="image/png" />
     <link href="./index.css" rel="stylesheet" />
     <script type="module" src="./js/main.js"></script>
   </head>
 
   <body>
-    <header class="header">
-      <!--logo영역-->
-      <h1 class="logo">
-        <a href="#">
-          <img src="../img/goorm_logo.png" alt="logo" />
-        </a>
-      </h1>
+    <div id="header-container"></div>
 
-      <!--navi영역-->
-      <nav class="navi">
-        <ul style="list-style-type: none">
-          <li><a href="#">HOME</a></li>
-          <li class="main-menu">
-            <a href="#">전체상품</a>
-            <ul class="sub-menu">
-              <li><a href="#">전체상품</a></li>
-              <li><a href="#">신상품</a></li>
-              <li><a href="#">Best</a></li>
-              <li><a href="#">할인상품</a></li>
-            </ul>
-          </li>
-          <li class="main-menu">
-            <a href="#">카테고리</a>
-            <ul class="sub-menu">
-              <li><a href="#">테이블/책상</a></li>
-              <li><a href="#">의자/쇼파</a></li>
-              <li><a href="#">서랍/수납장</a></li>
-              <li><a href="#">진열장/책장</a></li>
-              <li><a href="#">가벽/파티션</a></li>
-              <li><a href="#">조명</a></li>
-            </ul>
-          </li>
-          <li class="main-menu">
-            <a href="#">브랜드스토리</a>
-            <ul class="sub-menu">
-              <li><a href="#">브랜드 소개</a></li>
-              <li><a href="#">제작 과정</a></li>
-            </ul>
-          </li>
-          <li class="main-menu">
-            <a href="#">고객센터</a>
-            <ul class="sub-menu">
-              <li><a href="#">공지사항</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">1:1 문의</a></li>
-              <li><a href="#">배송 안내</a></li>
-              <li><a href="#">반품 · 환불 안내</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
+    <main class="main">
+      <!-- 배너영역 -->
+      <section class="banner-section">
+        <!-- 배너 배경 이미지 -->
+        <img
+          class="banner-bg"
+          src="./img/banner/banner1.jpg"
+          alt="홈오피스 배너"
+        />
+        <!--오버레이 추가-->
+        <div class="banner-dim"></div>
 
-      <!--util 영역-->
-      <ul class="util">
-        <li><a href="../pages/login.html">로그인/회원가입</a></li>
-        <li><a href="#">장바구니</a></li>
-      </ul>
-    </header>
+        <!-- 배너 텍스트 영역 -->
+        <div class="banner-text">
+          <p class="banner-subtitle">special deal</p>
+          <h2 class="banner-title">
+            미니멀한 홈오피스, <br />
+            하루의 집중력을 디자인하세요.
+          </h2>
+          <p class="banner-tag">
+            #오늘만 최대 40% 할인!!<br />
+            #슬림 데스크 #인체공학 의자 #수납
+          </p>
+          <button class="banner-btn">지금 보러가기</button>
+        </div>
+      </section>
 
-    <main class="main"></main>
-    <footer class="footer-container">
-      <ul>
-        <li><a href="#">이용약관</a></li>
-        <li><a href="#">개인정보 처리방침</a></li>
-        <li><a href="#">고객센터</a></li>
-        <li>
-          <address>
-            <sapn itemprop="name"> © Goorm Corp.</sapn>
-            <span hidden itemprop="address"
-              >주소 : 서울특별시 구로구 디지털로</span
-            >
-            <span hidden itemprop="telephone">대표번호 : 02-1234-5678</span>
-          </address>
-        </li>
-      </ul>
-    </footer>
+      <!-- 상품 리스트 영역 -->
+      <section class="products-section">
+        <h2 class="list-title">Best</h2>
+        <div class="product-grid" id="product-grid"></div>
+      </section>
+    </main>
+
+    <div id="footer-container"></div>
   </body>
 </html>

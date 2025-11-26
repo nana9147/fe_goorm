@@ -1,5 +1,385 @@
-@import './pages/index.css';
+@import "./pages/index.css";
 
-.main{
-    min-height:500px;
+/* =========================
+   Design Tokens (Light)
+   ========================= */
+:root {
+  /* 배경 */
+  --bg-body: #ffffff;
+  --bg-header: #ffffff;
+  --bg-main: #ffffff;
+  --bg-section: #0f172a; /* 배너 기본 배경 */
+  --bg-card: #ffffff;
+  --bg-footer: #ffffff;
+
+  /* 텍스트 */
+  --text-main: #111111;
+  --text-sub: #555555;
+  --text-muted: #676768;
+
+  /* 링크 */
+  --link-default: #676768;
+  --link-hover: #3774cf;
+
+  /* 보더 */
+  --border-default: rgba(175, 175, 175, 0.267);
+  --border-card: #e3e3e3;
+  --border-input: #dddddd;
+
+  /* 버튼 */
+  --btn-primary-bg: #b3e3f1;
+  --btn-primary-text: #0e356e;
+  --btn-primary-hover-bg: #4078b8;
+  --btn-primary-hover-text: #ffffff;
+
+  /* 배너 전용 */
+  --banner-bg: #0f172a;
+  --banner-text-main: #ffffff;
+  --banner-text-accent: #4b3908;
+  --banner-btn-bg: #2f4da1;
+  --banner-btn-text: #ffffff;
+}
+
+/* =========================
+   Dark Theme Override
+   ========================= */
+[data-theme="dark"] {
+  --bg-body: #111111;
+  --bg-header: #111111;
+  --bg-main: #111111;
+  --bg-section: #020617;
+  --bg-card: #111827;
+  --bg-footer: #111111;
+
+  --text-main: #eeeeee;
+  --text-sub: #aaaaaa;
+  --text-muted: #9ca3af;
+
+  --link-default: #e5e7eb;
+  --link-hover: #60a5fa;
+
+  --border-default: rgba(148, 163, 184, 0.4);
+  --border-card: #374151;
+  --border-input: #4b5563;
+
+  --btn-primary-bg: #1f2937;
+  --btn-primary-text: #e5e7eb;
+  --btn-primary-hover-bg: #374151;
+  --btn-primary-hover-text: #f9fafb;
+
+  --banner-bg: #020617;
+  --banner-text-main: #e5e7eb;
+  --banner-text-accent: #4b3908;
+  --banner-btn-bg: #2f4da1;
+  --banner-btn-text: #f9fafb;
+}
+
+/* 다크모드일 때 로고 흰색화 */
+[data-theme="dark"] .logoImg {
+  filter: invert(1);
+}
+
+/* 다크모드일 때 배너만 어둡게 */
+[data-theme="dark"] .banner-dim {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   Global
+   ========================= */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans KR", sans-serif;
+}
+
+/* 메인 공통 */
+.main {
+  padding-bottom: 60px;
+}
+
+/* =========================
+   Banner
+   ========================= */
+.banner-section {
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+  background: var(--banner-bg);
+}
+
+.banner-bg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 라이트 모드: 투명 */
+.banner-dim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0); /* 기본 투명 */
+  pointer-events: none;
+  transition: background-color 0.3s ease;
+  z-index: 3;
+}
+
+.banner-text {
+  padding: 24px 20px 32px;
+  color: var(--banner-text-main);
+}
+
+.banner-subtitle {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  opacity: 0.8;
+}
+
+.banner-title {
+  font-size: 28px;
+  line-height: 1.4;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.banner-tag {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+.banner-btn {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 999px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  background: var(--banner-btn-bg);
+  color: var(--banner-btn-text);
+  cursor: pointer;
+}
+
+.banner-btn:hover {
+  opacity: 0.9;
+}
+
+/* ====== 상품 섹션 & 탭 ====== */
+.products-section {
+  padding: 0 10%;
+  box-sizing: border-box;
+}
+
+.list-title {
+  margin-bottom: 30px;
+}
+
+/* ====== 상품 카드 그리드 ====== */
+.product-grid {
+  display: grid;
+  width: 100%;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* 카드 공통 */
+.product-card {
+  width: 100%;
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  margin: 0 auto;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+}
+
+.product-img-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.product-img-wrap img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+}
+
+.product-card h3,
+.product-card p {
+  margin-left: 20px;
+}
+
+.product-card h3 {
+  font-size: 13px;
+  color: var(--text-sub);
+  margin: 12px 14px 4px 20px;
+}
+
+.product-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 14px 8px;
+  color: var(--text-main);
+}
+
+.product-price {
+  font-size: 14px;
+}
+
+.product-discount {
+  color: #2563eb;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.product-price-value {
+  font-weight: 700;
+}
+
+.product-meta {
+  font-size: 12px;
+  color: var(--text-sub);
+  margin: 0 4px 14px 14px;
+}
+
+/* ====== 반응형 ====== */
+
+/* 모바일 */
+@media screen and (max-width: 767px) {
+  .banner-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .banner-bg {
+    content: url("./img/banner/banner_mo.jpg");
+  }
+  .banner-subtitle,
+  .banner-tag {
+    display: none;
+  }
+
+  .banner-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px 20px;
+    box-sizing: border-box;
+  }
+
+  .banner-title {
+    font-size: 20px;
+    margin: 0;
+    line-height: 1.3;
+    flex: 1;
+  }
+
+  .banner-btn {
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 14px;
+    white-space: nowrap;
+  }
+}
+
+/* tablet + desktop 공통 */
+@media screen and (min-width: 768px) {
+  .banner-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .banner-text {
+    position: absolute;
+    color: var(--banner-text-accent);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    z-index: 5;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .banner-subtitle {
+    font-weight: bold;
+    font-size: 0.8em;
+    width: fit-content;
+    border-radius: 20px;
+    padding: 0.2em 0.7em;
+  }
+
+  .banner-bg {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+  }
+
+  .banner-btn {
+    align-self: flex-end;
+    font-size: 0.8em;
+    padding: 6px 14px;
+    font-weight: 500;
+  }
+}
+
+/* desktop 전용 스타일 */
+@media screen and (min-width: 1024px) {
+  .banner-title {
+    font-size: 34px;
+    line-height: 1.4;
+  }
+
+  .banner-subtitle {
+    font-size: 1em;
+    padding: 0.2em 0.7em;
+  }
+
+  .banner-tag {
+    font-size: 18px;
+  }
+
+  .banner-text {
+    width: 40%;
+    padding: 32px 24px;
+  }
+
+  .banner-btn {
+    font-size: 0.9em;
+    padding: 10px 20px;
+    border-radius: 30px;
+  }
+}
+
+/* tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
