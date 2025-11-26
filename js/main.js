@@ -4,42 +4,38 @@ import { navi } from "./navi.js";
 import { products } from "./productData.js";
 import { initTheme, initThemeToggle } from "./theme.js";
 
-//------------------------------------------------------------
-// header
-//------------------------------------------------------------
-async function loadHeader() {
-  const container = document.getElementById("header-container");
+async function loadCommonLayout(containerId, url, message) {
+  const container = document.getElementById(containerId);
   if (!container) return;
 
   try {
-    const response = await fetch("../partials/header.html");
+    const response = await fetch(url);
     if (!response.ok) {
-      throw new Error("헤더 로딩 실패: " + response.status);
+      throw new Error(`${message} 로딩 실패: ${response.status}`);
     }
     const html = await response.text();
     container.innerHTML = html;
   } catch (e) {
-    console.error("헤더 오류:", e);
+    console.error(`${message} 오류 : `, e);
   }
 }
 
-//------------------------------------------------------------
-// footer
-//------------------------------------------------------------
-async function loadFooter() {
-  const container = document.getElementById("footer-container");
-  if (!container) return;
+// header
+async function loadHeader() {
+  return loadCommonLayout(
+    "header-container",
+    "../partials/header.html",
+    "헤더"
+  );
+}
 
-  try {
-    const response = await fetch("../partials/footer.html");
-    if (!response.ok) {
-      throw new Error("푸터 로딩 실패: " + response.status);
-    }
-    const html = await response.text();
-    container.innerHTML = html;
-  } catch (e) {
-    console.error("푸터 오류:", e);
-  }
+// footer
+async function loadFooter() {
+  return loadCommonLayout(
+    "footer-container",
+    "../partials/footer.html",
+    "푸터"
+  );
 }
 
 //------------------------------------------------------------
