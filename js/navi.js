@@ -17,30 +17,31 @@ export function navi() {
     link.addEventListener("click", function (e) {
       e.preventDefault(); //이동제어
 
-      const li = this.parentElement;
-      // 메뉴 on/off
+      const li = this.closest("li.main-menu");
+      if (!li) return;
+
       const isOpen = li.classList.contains("open");
 
       // 다른 메뉴는 닫기
-      closeAllM;
+      closeAllMenus();
+
+      if (!isOpen) {
+        li.classList.add("open");
+      }
     });
   });
 
   // 서브 메뉴 클릭 → close + 페이지이동
   subMenuLinks.forEach((subLink) => {
     subLink.addEventListener("click", function () {
-      document.querySelectorAll(".navi li.main-menu.open").forEach((item) => {
-        item.classList.remove("open");
-      });
+      closeAllMenus();
     });
   });
 
   //home버튼 클릭 -> close + 페이지이동
   if (homeLink) {
     homeLink.addEventListener("click", function () {
-      document.querySelectorAll(".navi li.main-menu.open").forEach((item) => {
-        item.classList.remove("open");
-      });
+      closeAllMenus();
     });
   }
 }
