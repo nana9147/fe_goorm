@@ -1,0 +1,160 @@
+.profile-section {
+  max-width: 960px;
+  margin: 60px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.profile-wrap {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: 32px;
+  padding: 24px 28px;
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border-card);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* ========== 왼쪽 정보영역 ========== */
+
+.main-profile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 24px;
+  border-right: 1px solid var(--border-default);
+}
+
+.profile-img-wrap {
+  width: fit-content;
+}
+
+/* 정보수정 버튼 */
+.edit-profile-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: none;
+  font-size: 12px;
+  background: var(--profile-btn-bg);
+  color: var(--profile-btn-text);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: 0.2s;
+}
+
+.edit-profile-btn:hover {
+  background: var(--profile-btn-hover-bg);
+  color: var(--profile-btn-hover-text);
+  transform: translateY(-1px);
+}
+
+/* 프로필 이미지 */
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #e5f0ff, #f5f3ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 기본정보 */
+
+.user-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.user-tier {
+  font-size: 0.8em;
+  background: var(--tier-badge-bg);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  color: var(--tier-badge-text);
+}
+
+.user-email {
+  font-size: 16px;
+  color: var(--text-sub);
+  margin-bottom: 18px;
+}
+
+/* ========== 오른쪽 정보영역 ========== */
+
+.sub-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.phone-info,
+.address-info,
+.point-info {
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--bg-body);
+  border: 1px solid var(--border-card);
+  margin: 0 0 4px;
+}
+
+.info-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-sub);
+  margin-bottom: 4px;
+}
+
+.infoData {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.point-info .infoData {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.desc {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ========== 반응형 ========== */
+
+@media screen and (max-width: 768px) {
+  .profile-wrap {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .main-profile {
+    border-right: none;
+    border-bottom: 1px solid var(--border-default);
+    padding-bottom: 18px;
+  }
+
+  .user-name {
+    font-size: 18px;
+  }
+}

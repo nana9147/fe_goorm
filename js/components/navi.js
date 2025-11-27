@@ -1,29 +1,29 @@
-const mainMenuLinks = document.querySelectorAll(".navi li.main-menu > a");
-const subMenuLinks = document.querySelectorAll(".navi .sub-menu a");
-const homeLink = document.querySelector(".navi ul > li:first-child > a");
+const closeAllMenus = (naviEl) => {
+  naviEl
+    .querySelectorAll("li.main-menu.open")
+    .forEach((item) => item.classList.remove("open"));
+};
 
 export function navi() {
   const naviEl = document.querySelector(".navi");
   if (!naviEl) return;
 
-  const closeAllMenus = () => {
-    naviEl
-      .querySelectorAll("li.main-menu.open")
-      .forEach((item) => item.classList.remove("open"));
-  };
+  const mainMenuLinks = naviEl.querySelectorAll("li.main-menu > a");
+  const subMenuLinks = naviEl.querySelectorAll(".sub-menu a");
+  const homeLink = naviEl.querySelector("ul > li:first-child > a");
 
   // 메인 메뉴 클릭 → open 토글
   mainMenuLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
-      e.preventDefault(); //이동제어
+      e.preventDefault(); // 이동 제어
 
       const li = this.closest("li.main-menu");
       if (!li) return;
 
       const isOpen = li.classList.contains("open");
 
-      // 다른 메뉴는 닫기
-      closeAllMenus();
+      // 다른 메뉴 닫기
+      closeAllMenus(naviEl);
 
       if (!isOpen) {
         li.classList.add("open");
@@ -31,17 +31,17 @@ export function navi() {
     });
   });
 
-  // 서브 메뉴 클릭 → close + 페이지이동
+  // 서브 메뉴 클릭 → close + 페이지 이동
   subMenuLinks.forEach((subLink) => {
     subLink.addEventListener("click", function () {
-      closeAllMenus();
+      closeAllMenus(naviEl);
     });
   });
 
-  //home버튼 클릭 -> close + 페이지이동
+  // home 버튼 클릭 → close + 페이지 이동
   if (homeLink) {
     homeLink.addEventListener("click", function () {
-      closeAllMenus();
+      closeAllMenus(naviEl);
     });
   }
 }
